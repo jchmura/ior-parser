@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>IOR Parser</title>
+
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="main">
+        <h1 class="title">IOR Parser</h1>
+
+        <form action="#" th:action="@{/}" th:object="${ior}" method="post">
+            <div class="form-row">
+                <div class="input-group">
+                    <input type="text" th:field="*{ior}" class="form-control" placeholder="IOR" aria-label="IOR"
+                           aria-describedby="submit">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit" id="submit">Parse</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div th:if="${error}" th:text="${error}" class="error alert alert-danger" role="alert">
+        Alert
+    </div>
+
+    <div th:if="${parsed}" class="parsed shadow bg-light rounded">
+        <pre th:text="${parsed}">
+            Parsed IOR
+        </pre>
+    </div>
+
+</div>
+
+</body>
+</html>

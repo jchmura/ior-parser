@@ -1,0 +1,23 @@
+body {
+    padding-top: 20px;
+}
+
+.main {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.error {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.parsed {
+    padding: 10px 10px 5px;
+    /*margin-top: 40px;*/
+}
