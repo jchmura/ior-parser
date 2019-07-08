@@ -40,17 +40,18 @@ public class IorParserController {
     }
 
     private String parseIor(String iorString) {
+        String ior = iorString.replaceAll("\\s+", "");
         final org.omg.CORBA.ORB orb = org.omg.CORBA.ORB.init((String[]) null, null);
         final org.jacorb.orb.ORB jorb = (org.jacorb.orb.ORB) orb;
 
-        final ParsedIOR pior = new ParsedIOR(jorb, iorString);
+        final ParsedIOR pior = new ParsedIOR(jorb, ior);
 
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw);
 
 
         printIOR(jorb, pior, pw);
-        return sw.toString();
+        return sw.toString().trim();
     }
 
 }
